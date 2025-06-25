@@ -101,10 +101,10 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
-            // minifyEnabled enableProguardInReleaseBuilds
-            minifyEnabled false
+            minifyEnabled enableProguardInReleaseBuilds
+            // minifyEnabled false
             shrinkResources false
-            // proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 }
@@ -112,12 +112,11 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
-
-    implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 }
