@@ -47,6 +47,7 @@ const HomeView = () => {
 
   const handleStartPayment = async () => {
     const paymentParameters: PaymentParameters = {
+      autocomplete:   false,
       amountMoney: { amount: 1, currencyCode: CurrencyCode.USD },
       appFeeMoney: { amount: 0, currencyCode: CurrencyCode.USD },
       idempotencyKey: uuid.v4(),
@@ -64,7 +65,7 @@ const HomeView = () => {
 
     const promptParameters: PromptParameters = {
       additionalMethods: [AdditionalPaymentMethodType.ALL],
-      mode: PromptMode.DEFAULT,
+      mode: PromptMode.CUSTOM,
     };
 
     try {
