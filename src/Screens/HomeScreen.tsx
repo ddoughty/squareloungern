@@ -47,8 +47,8 @@ const HomeView = () => {
 
   const handleStartPayment = async () => {
     const paymentParameters: PaymentParameters = {
-      amountMoney: { amount: 1, currencyCode: CurrencyCode.EUR },
-      appFeeMoney: { amount: 0, currencyCode: CurrencyCode.EUR },
+      amountMoney: { amount: 1, currencyCode: CurrencyCode.USD },
+      appFeeMoney: { amount: 0, currencyCode: CurrencyCode.USD },
       idempotencyKey: uuid.v4(),
       note: 'Payment for services',
       processingMode: ProcessingMode.AUTO_DETECT
